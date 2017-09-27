@@ -42,10 +42,8 @@
 @implementation UICollectionViewLeftAlignedLayout
 
 #pragma mark - UICollectionViewLayout
-
-- (void)prepareLayout {
-    [super prepareLayout];
-    self.collectionViewLayoutHeight = 0
+-(CGSize)collectionViewContentSize {
+    return CGSizeMake(self.collectionView.bounds.size.width, 33)
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
@@ -86,7 +84,6 @@
     BOOL isFirstItemInRow = !CGRectIntersectsRect(previousFrame, strecthedCurrentFrame);
 
     if (isFirstItemInRow) {
-        self.collectionViewLayoutHeight = 100
         // make sure the first item on a line is left aligned
         [currentItemAttributes leftAlignFrameWithSectionInset:sectionInset];
         return currentItemAttributes;

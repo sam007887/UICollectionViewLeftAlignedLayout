@@ -27,7 +27,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UICollectionViewLeftAlignedLayout : UICollectionViewFlowLayout
-@property (strong, nonatomic) CGFloat * collectionViewLayoutHeight;
 @end
 
 /**
